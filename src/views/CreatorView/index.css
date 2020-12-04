@@ -1,10 +1,23 @@
+.creator-inner_view{
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 70px);
+}
+
+.creator-image{
+
+}
 .creator-products{
   display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  overflow-y: scroll;
 }
 
 .creator-header{
   display: flex;
-  height: 150px;
+  flex-direction: column;
+  width: 25vw;
   margin-top: 12px;
   margin-bottom: 12px;
 }
@@ -15,6 +28,7 @@
 }
 
 .stat-blocks > p {
+  margin: 0;
   margin-right: 12px;
 }
 
@@ -26,18 +40,21 @@
 
 .creator-stats{
   flex-direction: column;
-  flex: 1;
+
   display: flex;
   padding: 8px;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.creator-info svg{
-  flex: 1;
+.creator-image svg{
+  height: 100px;
+  width: 100px;
 }
 
 .creator-info {
-  flex: 0.3;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
   display: flex;
 }

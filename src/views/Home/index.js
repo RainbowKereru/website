@@ -33,7 +33,7 @@ React.useEffect(() => {
         <div className="content-scroll">
         {props.stock.map((x) => (
           <StockCard stock={x} onArtistClick={(artist) => {
-            props.history.push('/creator/' + artist._id)
+            props.history.push('/market/creator/' + artist._id)
           }}/>
         ))}
         </div>

@@ -1,6 +1,15 @@
 import React from 'react';
 import Header from '../../components/header';
-import { Divider, Typography } from '@material-ui/core';
+import { 
+  Divider, 
+  Paper,
+  List,
+  ListItem,
+  Typography } from '@material-ui/core';
+import {
+  MonetizationOn
+} from '@material-ui/icons';
+import CreatorHeader from '../../components/creator-header';
 import Hexagon from 'react-hexagon';
 import StockCard from '../../components/stock-card';
 import { getCreator } from '../../actions/marketActions';
@@ -21,33 +30,29 @@ export default function CreatorView(props){
   return(
     <div className="creator-view">
       <Header />
-      <div className="creator-header">
-        <div className="creator-info">
-          <Hexagon
-            style={{stroke: '#42873f'}}
-            backgroundImage={`https://avatars.dicebear.com/api/avataaars/${creator.username}.svg`} />
-        </div>
-        <div className="creator-stats">
-          <Typography variant="h5">{creator.name}</Typography>
-          <div className="stat-blocks">
-            <p>
-                16 items
-            </p>
-            <p>
-                130 posts
-            </p>
-            <p>
-                8 community projects
-            </p>
-          </div>
-        </div>
-      </div>
-      <Divider />
+      <div className="creator-inner_view">
+        <Paper className="creator-header">
+          <CreatorHeader creator={creator} />
+          <Divider />      
+          <Typography variant="subtitle1">{creator.bio}</Typography>
+          <Divider />
+          <List style={{flex: 1}}>
+            <ListItem button>Market Items</ListItem>
+            <ListItem button>Content</ListItem>
+            <ListItem button>Projects</ListItem>
+          </List>
+          <Divider />
+          <ListItem button>
+            <MonetizationOn style={{marginRight: 12}} />
+            Support this creator
+          </ListItem>
+      </Paper>
       <div className="creator-products">
         {stock.map((x) => (
           <StockCard stock={x} />
         ))}
       </div>
     </div>
+  </div>
   );
 }

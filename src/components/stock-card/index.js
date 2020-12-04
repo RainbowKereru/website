@@ -12,7 +12,10 @@ import './index.css';
 export default function StockCard(props){
   console.log(props)
   return (
-    <Card className="stock-card" onClick={(e) => {
+    <Card style={{
+      width: (props.size) && 200 , 
+      height: props.size && 200  
+    }} className="stock-card" onClick={(e) => {
       if(props.onClick) props.onClick()
     }}>
       <CardMedia
