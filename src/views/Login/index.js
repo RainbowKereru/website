@@ -13,6 +13,9 @@ import './index.css';
 
 function Login(props){
   const [ name, setName ] = React.useState('')
+  
+  const [ error, setError ] = React.useState(null)
+
   const [ username, setUsername ] = React.useState('')
   const [ password, setPassword ] = React.useState('')
 
@@ -24,12 +27,17 @@ function Login(props){
         setSignup(false)
       })  
     }else{
-      props.login(username, password, () => {
-        let urlParams = new URLSearchParams(window.location.search)
-        if(urlParams.get('redir')){
-          props.history.push(urlParams.get('redir'))
+      props.login(username, password, (err) => {
+        if(!err){
+          setError(null)
+          let urlParams = new URLSearchParams(window.location.search)
+          if(urlParams.get('redir')){
+            props.history.push(urlParams.get('redir'))
+          }else{
+            props.history.push('/dashboard')
+          }
         }else{
-          props.history.push('/dashboard')
+          setError(err)
         }
     })
     }
@@ -48,10 +56,12 @@ function Login(props){
               value={name}
               onChange={(e) => setName(e.target.value)} />}
             <TextField 
+              error={error}
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               label="Username" />
             <TextField
+              error={error}
               type="password"
               onKeyDown={(e) => {
                 if(e.keyCode == 13) _login();

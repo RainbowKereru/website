@@ -37,6 +37,8 @@ export function login(username, password, cb){
     if(r.success){
       dispatch({type: types.SET_TOKEN, token: r.token})
       cb()
+    }else{
+      cb({error: "User not authed"})
     }
   })
   }

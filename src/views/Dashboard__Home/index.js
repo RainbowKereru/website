@@ -15,7 +15,7 @@ function DashboardHome(props){
   return (
     <div className="dashboard-home">
       <div className="main-col">
-          <Paper style={{flex: 0.7}}>
+          <Paper style={{flex: 0.7, padding: 8}}>
             <Typography variant="h6">Flow</Typography>
             <Divider />
           </Paper>
@@ -24,7 +24,7 @@ function DashboardHome(props){
           </Paper>
       </div>
       <div className="feed-col">
-      <Paper style={{flex: 1}}>
+      <Paper style={{flex: 1, padding: 8}}>
         <Typography variant="subtitle1">Latest Public Projects</Typography>
         <Divider />
         <List>

@@ -30,6 +30,33 @@ export function getInventory(){
   }
 }
 
+export function updateInventory(id, obj, cb){
+  return (dispatch, getState) => {
+    let fd = new FormData()
+    for(var k in obj){
+      if(Array.isArray(obj[k])){
+        let arr = obj[k]
+        for(var i = 0; i < arr.length; i++){
+          fd.append(k, arr[i])
+        }
+      }else{
+        fd.append(k, obj[k])
+      }
+    }
+    return fetch(`${conf.baseURL}/market/stock/${id}`, {
+      method: "PUT",
+      headers: {
+        'Authorization': 'Bearer ' + getState().auth.token
+      }, 
+      body: fd
+    }).then((r) => r.json()).then((r) => {
+      cb()
+      dispatch({type: types.UPDATE_STOCK_ITEM, id: id, obj: obj})
+    })
+  }
+}
+
+
 export function addToInventory(name, description, images, price, cb){
   return (dispatch, getState) => {
     let fd = new FormData()

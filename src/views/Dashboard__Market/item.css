@@ -1,0 +1,20 @@
+.market-item-view .market-info{
+  flex: 0.6;
+}
+
+.market-item-view{
+  display: flex;
+ 
+  flex: 1; 
+}
+
+.market-item-view .image-selector{
+  padding: 8px;
+}
+
+.market-item-view .market-item{ 
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}

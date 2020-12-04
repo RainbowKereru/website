@@ -7,6 +7,17 @@ const INIT = {
 
 export default function marketReducer(state = INIT, action = {}){
   switch(action.type){
+    case types.UPDATE_STOCK_ITEM:
+      let inv = state.inventory.slice()
+      let iIx = inv.map((x) => x._id).indexOf(action.id)
+      inv[iIx] = {
+        ...inv[iIx],
+        ...action.obj
+      }
+      return {
+        ...state,
+        inventory: inv
+      }
     case types.DELETE_INVENTORY_ITEM:
       let n = state.inventory.slice()
       let nIx = n.map((x) => x._id).indexOf(action.item)

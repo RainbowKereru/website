@@ -13,9 +13,15 @@ function Inventory(props){
 
       <List>
         {props.inventory.map((x) => (
-          <StockItem item={x} />
+          <StockItem item={x} editItem={(id) => {
+            props.history.push('/dashboard/market/item/' + id)
+          }}/>
         ))}
-      </List>
+        </List>
+
+        <Fab onClick={() => props.history.push(`/dashboard/market/item`)} color="primary" style={{position: 'absolute', right: 12, bottom: 12, zIndex: 9}}>
+          <Add />
+        </Fab>
     </div>
   );
 }

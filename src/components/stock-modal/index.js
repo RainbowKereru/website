@@ -13,12 +13,15 @@ import {
 } from '@material-ui/core';
 import { connect } from 'react-redux';
 import { addToInventory } from '../../actions/marketActions';
-import { Clear, Photo, } from '@material-ui/icons';
+import { Clear, Photo, Backup } from '@material-ui/icons';
 import {useDropzone} from 'react-dropzone'
 
 import './index.css';
 
 function StockModal(props){
+
+  const [ loading, setLoading ] = React.useState(false)
+
   const [ price, setPrice ] = React.useState(0)
   const [ priced, setPriced ] = React.useState(false)
 
@@ -29,8 +32,8 @@ function StockModal(props){
 
   const onDrop = React.useCallback(acceptedFiles => {
     // Do something with the files
-    setImages(acceptedFiles.concat(images))
-   }, [])
+    setImages(images.concat(acceptedFiles))
+   }, [images])
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
 
@@ -39,7 +42,9 @@ function StockModal(props){
   }
 
   const addInventory = () => {
+    setLoading(true)
     props.addToInventory(name, description, images, price, () => {
+      setLoading(false)
       props.onClose()
     }) 
 
@@ -64,7 +69,8 @@ function StockModal(props){
                          <img src={URL.createObjectURL(x)} />
                        </div>
                      )
-                   }): <Photo />}
+                   }): null}
+                  <Backup style={{marginLeft: 8}} /> 
            </div>
            <TextField 
              label="Item name" 
@@ -89,7 +95,7 @@ function StockModal(props){
       </DialogContent>
       <DialogActions>
         <Button onClick={() => props.onClose()}>Cancel</Button>
-        <Button onClick={() => addInventory()} variant="contained" color="primary">Upload</Button>
+        <Button onClick={() => addInventory()} disabled={loading} variant="contained" color="primary">Upload</Button>
       </DialogActions>
     </Dialog>
   );
