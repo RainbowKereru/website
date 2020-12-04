@@ -1,0 +1,26 @@
+.project-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 8px;
+}
+.project-body{
+  position: relative;
+  flex: 1;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-header{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-view{
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}

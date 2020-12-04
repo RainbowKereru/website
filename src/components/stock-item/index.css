@@ -1,0 +1,9 @@
+.stock-item img{
+  width: 70px;
+  height: 70px;
+  margin-right: 12px;
+}
+
+.stock-item{ 
+  display: flex;
+}

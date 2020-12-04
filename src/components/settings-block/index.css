@@ -1,0 +1,12 @@
+.settings-block__user-list{
+  padding-left: 8px;
+  padding-right: 8px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.settings-block{
+  flex: 1;
+  display: flex;
+}

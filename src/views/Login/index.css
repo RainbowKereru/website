@@ -1,0 +1,37 @@
+.login-header{
+  display: flex;
+  height: 60px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.login-header img{
+  width: 60px;
+  margin-right: 12px;
+}
+
+.login-form{
+  padding: 12px;
+}
+
+.login-container .signup-switch{
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.login-container{
+  flex-direction: column;
+  background-image: linear-gradient(222deg, 
+    rgba(255,0,0, 0.6),
+    rgba(255, 165, 0, 0.6) ,
+    rgba(255,255,0, 0.7),
+    rgba(0, 80, 0, 0.6),
+    rgba(0, 0, 255, 0.7),
+    rgba(75, 0, 82, 0.6),
+    rgba(238, 82, 238, 0.7));
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

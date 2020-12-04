@@ -1,0 +1,43 @@
+.creator-products{
+  display: flex;
+}
+
+.creator-header{
+  display: flex;
+  height: 150px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.stat-blocks{
+  flex-direction: row;
+  display: flex;
+}
+
+.stat-blocks > p {
+  margin-right: 12px;
+}
+
+.creator-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.creator-stats{
+  flex-direction: column;
+  flex: 1;
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.creator-info svg{
+  flex: 1;
+}
+
+.creator-info {
+  flex: 0.3;
+  display: flex;
+}

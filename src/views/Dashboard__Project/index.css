@@ -1,0 +1,11 @@
+.project-grid{
+  display: flex;
+  flex-wrap :wrap;
+}
+.dashboard-projects{
+  width: 100vw;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+} 

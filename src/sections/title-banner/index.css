@@ -1,0 +1,21 @@
+
+.title-banner{
+  display: flex;
+  height: 90vh;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+.title-video {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.title-video video{
+  width: 60%;
+}
+

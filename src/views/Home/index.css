@@ -1,0 +1,25 @@
+.home-row{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-row{
+  padding: 12px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.content-row .MuiTypography-root.MuiTypography-subtitle1 {
+  font-size: 1.5rem;
+  text-decoration: underline;
+  color: darkgray;
+  opacity: 0.8;
+}
+
+.content-scroll{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+} 

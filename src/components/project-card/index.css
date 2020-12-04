@@ -1,0 +1,24 @@
+.project-card{
+  border: 1px solid black;
+  cursor: pointer;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 12px;
+  height: 222px;
+  width: 222px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card .MuiCardContent-root{
+  padding-bottom: 0px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-card .MuiCardMedia-root {
+  flex: 1;
+  border-bottom : 1px solid black;
+}

@@ -1,0 +1,8 @@
+.calendar-view{
+  flex: 1;
+  display: flex;
+}
+
+.calendar-view .MuiPaper-root{
+  flex: 1;
+}
