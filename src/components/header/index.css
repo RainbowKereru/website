@@ -22,14 +22,17 @@
   font-size: 16px;
 }
 
+.title .title-logo svg{
+  height: 50px;
+  width: 50px;
+}
+
 .title-logo{
   display: flex;
   align-items: center;
 }
 
 .title svg{
-  width: 90px;
-  height: 90px;
   margin: 12px;
 }
 
@@ -37,11 +40,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height : 100px;
+  height : 70px;
 }
 
 .header{
-  background: white;
+  background: #efefef; 
   box-shadow: 0px 5px 10px -5px gray;
 }
 

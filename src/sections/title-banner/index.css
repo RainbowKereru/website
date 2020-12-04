@@ -1,4 +1,13 @@
 
+.title-more{
+  display: flex;
+  justify-content: center;
+}
+
+.title-more svg{
+  font-size: 66px;
+}
+
 .title-banner{
   display: flex;
   height: 90vh;
@@ -10,6 +19,7 @@
 .title-video {
   flex: 1;
   display: flex;
+  flex-direction :column;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
