@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
   AllInbox,
+  ChevronLeft,
   Menu as MenuIcon,
   AccountCircle } from '@material-ui/icons';
 
@@ -118,14 +119,19 @@ function Dashboard(props){
           <Typography variant="h6">Rainbow Kereru</Typography>
         </ListItem>
         <Divider />
-        <List>
+        <List style={{flex: 1}}>
             {menu.map((x) => (
               <ListItem button onClick={() => {
                 props.history.push(`${props.match.url}${x.path}`)
                 openDrawer(false)
               }}>{x.label}</ListItem>
             ))}
-        </List>
+          </List>
+        <Divider />
+        <ListItem button onClick={() => props.history.push('/')}>
+          <ChevronLeft />
+          Exit to website
+        </ListItem>
       </Drawer>
 
       <div className="dashboard-body">
